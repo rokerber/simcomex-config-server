@@ -1,0 +1,38 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /simcomex-api
+spring:
+    application:
+        name: simcomex-api
+    jackson:
+        serialization:
+            fail-on-empty-beans: false
+    mvc:
+        pathmatch:
+            matching-strategy: ant_path_matcher
+    datasource:
+        driver-class-name: oracle.jdbc.OracleDriver
+        url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=x-oc-rac-scan.sefa.pa.ipa)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=apps_extranet.sefa.pa.gov.br)))
+        username: SIMCOMEX
+        password: sefa1234
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.Oracle12cDialect
+        show-sql: false
+management:
+  endpoint:
+    web:
+      exposure:
+        include:
+            - '*'
+simcomex-api:
+    greeting : "Ola"
+    deafult-value: "Mundo"
+url:
+    consulta:
+        nfe:
+            danfe: http://app-dev.sefa.pa.gov.br/consulta-nfe-api/api/extranet/imprimir-danfe

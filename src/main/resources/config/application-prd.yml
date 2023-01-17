@@ -1,0 +1,10 @@
+spring:
+    datasource:
+        driver-class-name: oracle.jdbc.OracleDriver
+        password: sefa12345
+        url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=x-oc-rac-scan.sefa.pa.ipa)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=apps_extranet.sefa.pa.gov.br)))
+        username: USR_SIMCOMEX
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        show-sql: true
