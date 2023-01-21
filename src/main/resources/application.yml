@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: simcomex-config-server
-  profiles:
-    active:
-    - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@gitlab.sefa.pa.gov.br:sefa/simcomex-microsservicos/simcomex-config-server
+          default-label: master
+          search-paths: 'simcomex*'
